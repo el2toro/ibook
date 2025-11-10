@@ -1,0 +1,13 @@
+<ng-container class="booking">
+  <ng-container class="stepper">
+    <p-steps 
+    [model]="items" 
+    [readonly]="false" 
+    [activeIndex]="activeIndex" 
+    (activeIndexChange)="onActiveIndexChange($event)" />
+  </ng-container>
+
+  <ng-container class="steps">
+    <ng-template #dynamicContainer></ng-template>
+  </ng-container>
+</ng-container>
