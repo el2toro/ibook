@@ -1,5 +1,3 @@
-# Ibook
-
 # 💇‍♀️ Appointment Booking Widget
 
 ## 🧭 Overview
