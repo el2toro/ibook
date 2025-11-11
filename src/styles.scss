@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+.p-stepper-separator{
+    display: none;
+}
+
+.custom-step{
+    background-color: rgba(96, 165, 250, 1) !important;
+}
+
+.step-list{
+    border: none;
+}
+
+.p-steppanels{
+    padding: 0;
+}
