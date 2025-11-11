@@ -1,108 +1,48 @@
-import {
-  Component,
-  ComponentRef,
-  inject,
-  OnInit,
-  ViewChild,
-  ViewContainerRef,
-} from '@angular/core';
-import { MenuItem, MessageService } from 'primeng/api';
-import { StepsModule } from 'primeng/steps';
+import { Component, inject, OnInit } from '@angular/core';
+import { MessageService, PrimeIcons } from 'primeng/api';
 import { SpecialistSelectionComponent } from '../components/specialist-selection/specialist-selection.component';
 import { ProcedureSelectionComponent } from '../components/procedure-selection/procedure-selection.component';
+import { StepperModule } from 'primeng/stepper';
+import { DateTimeSelectionComponent } from '../components/date-time-selection/date-time-selection.component';
+import { ClientInformationComponent } from '../components/client-information/client-information.component';
+import { ConfirmationComponent } from '../components/confirmation/confirmation.component';
+import { CommonModule } from '@angular/common';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-appointment-widget',
   templateUrl: './appointment-widget.component.html',
   styleUrls: ['./appointment-widget.component.scss'],
-  imports: [StepsModule],
+  imports: [
+    StepperModule,
+    SpecialistSelectionComponent,
+    DateTimeSelectionComponent,
+    ProcedureSelectionComponent,
+    ClientInformationComponent,
+    ConfirmationComponent,
+    CommonModule,
+    ButtonModule
+],
   providers: [MessageService],
   standalone: true,
 })
 export class AppointmentWidgetComponent implements OnInit {
   private messageService = inject(MessageService);
-  @ViewChild('dynamicContainer', { read: ViewContainerRef, static: true })
-  container!: ViewContainerRef;
-  componentRef!: ComponentRef<any>;
 
-  items: MenuItem[] | undefined;
-  activeIndex: number = 0;
+  activeStep: number = 1;
 
   constructor() {}
 
-  ngOnInit() {
-   this.container.createComponent(SpecialistSelectionComponent)
-    this.items = [
-      {
-        label: 'Personal',
-        command: (event: any) =>{
+  ngOnInit() {}
 
-            this.loadDynamicComponenet(SpecialistSelectionComponent)
-
-              this.messageService.add({
-            severity: 'info',
-            summary: 'First Step',
-            detail: event.item.label,
-          })
-        }
-        
-      },
-      {
-        label: 'Seat',
-        command: (event: any) =>
-         { 
-             this.loadDynamicComponenet(ProcedureSelectionComponent)
-            this.messageService.add({
-            severity: 'info',
-            summary: 'Second Step',
-            detail: event.item.label,
-          })}
-      },
-      {
-        label: 'Payment',
-        command: (event: any) =>
-          this.messageService.add({
-            severity: 'info',
-            summary: 'Third Step',
-            detail: event.item.label,
-          }),
-      },
-      {
-        label: 'Confirmation',
-        command: (event: any) =>
-          this.messageService.add({
-            severity: 'info',
-            summary: 'Last Step',
-            detail: event.item.label,
-          }),
-      },
-    ];
+  back() {
+    if(this.activeStep === 1){ return }
+    this.activeStep = this.activeStep - 1;
   }
 
-  onActiveIndexChange(event: number) {
-    this.activeIndex = event;
-  }
+  continue() {
+    if(this.activeStep >= 5){ return };
 
-  loadDynamicComponenet(component: any) {
-     // Clear any previously loaded component
-    this.container.clear();
-
-    // Dynamically create the component
-    this.componentRef = this.container.createComponent(component);
-
-      // Optionally pass data to the component
-    //this.componentRef.instance.specialistName = 'Hair Stylist';
-
-    // Optionally listen to events emitted from the component
-    this.componentRef.instance.selected.subscribe((data: any) => {
-      console.log('Specialist selected:', data);
-    });
-  }
-
-   // Optionally destroy the component
-  destroyComponent() {
-    if (this.componentRef) {
-      this.componentRef.destroy();
-    }
+    this.activeStep = this.activeStep + 1;
   }
 }
