@@ -4,7 +4,8 @@
     <p>Select from our team of professionals</p>
   </div>
 
-  <div class="professional-container">
+  @for (professional of professionals; track $index) {
+    <div class="professional-container">
     <div class="image">
       <img src="assets/images/img1.jpg" alt="img" />
     </div>
@@ -28,4 +29,5 @@
       <i class="pi pi-arrow-right"></i>
     </div>
   </div>
+  }
 </div>
