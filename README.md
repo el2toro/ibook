@@ -1,6 +1,119 @@
-# Ibook
+# 💇‍♀️ Appointment Booking Widget
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+## 🧭 Overview
+The **Appointment Booking Widget** is a sleek, interactive, and fully customizable scheduling component built with **Angular 20**.  
+It enables users to book appointments for services such as **beauty treatments, wellness sessions, or pet grooming** through a guided, multi-step interface.
+
+Designed to be **modular**, **responsive**, and **easy to integrate**, this widget fits perfectly into any web application that requires appointment or reservation functionality.
+
+---
+
+## ✨ Features
+
+### 🧩 1. Multi-Step Booking Flow
+A seamless, user-friendly wizard that walks users through:
+
+1. Selecting a **specialist**
+2. Choosing a **date**
+3. Picking a **time**
+4. Selecting a **procedure or service**
+5. Providing **client details** (name, email, phone)
+6. Reviewing and confirming the **appointment summary**
+
+Each step is validated and visually guided with a **progress indicator** and **navigation controls**.
+
+---
+
+### 💅 2. Modern & Responsive UI
+- Built with **PrimeNG** components (Calendar, TimePicker, Dropdown, Steps).  
+- Fully **responsive** — works beautifully on desktop, tablet, and mobile.  
+- Includes **lightweight animations**, **icons**, and a **clean, minimal interface**.
+
+---
+
+### ⚡ 3. Dynamic Component Loading
+- Uses Angular’s `ViewContainerRef` to **load steps dynamically**, improving modularity and performance.  
+- Each step (e.g., Specialist Selection, Client Info) is a self-contained Angular component.  
+- Makes the widget easy to maintain, extend, or integrate into other projects.
+
+---
+
+### ✅ 4. Real-Time Validation
+- Ensures all required fields (e.g., email, phone) are completed before proceeding.  
+- Includes inline validation messages and visual error cues.  
+- Protects against invalid or incomplete submissions.
+
+---
+
+### 📅 5. FullCalendar Integration
+- Optional integration with **FullCalendar** for advanced date and time visualization.  
+- Displays available time slots, existing appointments, and disabled dates dynamically.
+
+---
+
+### 🔔 6. Confirmation & Feedback
+- Displays a **success** message upon successful booking or a **failure** notice if submission fails.  
+- Provides a summary of all selected details before confirmation.  
+- Can be connected to a **backend API** for real data submission and scheduling.
+
+---
+
+### 🔒 7. GDPR-Friendly Design
+- Transparent data collection flow.  
+- Optional consent checkbox for privacy compliance.  
+- Easy to adapt to regional data protection requirements.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| 🅰️ **Angular 20** | Core application framework |
+| 🧠 **TypeScript** | Strong typing and maintainable structure |
+| 🎨 **PrimeNG** | UI components for form elements and steps |
+| 🗓️ **FullCalendar** | Calendar integration and scheduling |
+| 💅 **HTML5 / CSS3** | Responsive layout and styling |
+| ⚙️ **RxJS** | Reactive programming and event handling |
+
+---
+
+## 🎯 Why Choose This Widget?
+
+✅ **Plug-and-play integration** — easily embed into existing Angular projects.  
+✅ **Modular and reusable** — each step is a standalone component.  
+✅ **Customizable** — supports theme styling, translations, and business logic extensions.  
+✅ **Scalable** — ready for future upgrades like payments, reminders, or user accounts.
+
+---
+
+## 🚀 Roadmap / Future Enhancements
+
+| Feature | Description |
+|----------|-------------|
+| 🌐 Multi-language support | Built-in localization (English, Romanian, etc.) |
+| ☁️ Backend API integration | Real-time data sync with booking databases |
+| 🕓 Time slot availability | Live updates based on specialist schedules |
+| 💳 Payment integration | Stripe / PayPal booking deposits |
+| 🎨 Theming | Dark/light mode customization |
+
+---
+
+## 🧑‍💻 Author
+
+**Developed by:** *[Your Name]*  
+**Project Type:** Angular 20 Frontend Widget  
+**Focus:** Appointment Scheduling & User Experience
+
+---
+
+## 💡 Summary
+
+The **Appointment Booking Widget** delivers an elegant and efficient solution for businesses that rely on scheduled services.  
+It combines a **guided multi-step process**, **modern UI design**, and **dynamic Angular capabilities** to create a smooth, enjoyable booking experience for users.
+
+> 📘 *Ideal for salons, clinics, pet care centers, fitness studios, and other appointment-based businesses.*
+
 
 ## Development server
 
