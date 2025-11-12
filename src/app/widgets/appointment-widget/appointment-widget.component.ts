@@ -41,13 +41,18 @@ export class AppointmentWidgetComponent implements OnInit {
   }
 
   continue() {
+    this.disabled = true;
+    
     if(this.activeStep >= 5){ return };
 
     this.activeStep = this.activeStep + 1;
   }
 
   onSpecialistSelect(event: any){
-    console.log(event)
     this.disabled = false;
+  }
+
+  onProcedureSelect(event: boolean){
+    this.disabled = event;
   }
 }

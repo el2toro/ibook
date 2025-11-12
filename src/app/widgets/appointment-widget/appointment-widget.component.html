@@ -54,7 +54,7 @@
 
       <p-step-panel [value]="2">
         <ng-template #content let-activateCallback="activateCallback">
-          <app-procedure-selection></app-procedure-selection>
+          <app-procedure-selection (selectedProceduresEvent)="onProcedureSelect($event)"></app-procedure-selection>
         </ng-template>
       </p-step-panel>
 

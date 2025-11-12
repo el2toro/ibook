@@ -1,3 +1,29 @@
 <div class="procedure">
+   <div class="heading">
+    <h2>Select Procedure</h2>
+    <p>Chose one or more services</p>
+  </div>
 
+  @for (procedure of procedures; track $index) {
+  <div class="procedure-item" [ngClass]="{'active': isSelected(procedure)}" (click)="selectProcedure(procedure)">
+    <div class="selection">
+      <p-checkbox
+        [inputId]="procedure.id"
+        [value]="procedure"
+        [(ngModel)]="procedure.selected"
+        [binary]="true"
+      />
+
+      <div class="title">
+        <h3>{{ procedure.title }}</h3>
+        <p>{{ procedure.description }}</p>
+      </div>
+    </div>
+
+    <div class="price">
+     <h3>${{ procedure.price}}</h3>
+     <p>{{ procedure.time }}</p>
+    </div>
+  </div>
+  }
 </div>
