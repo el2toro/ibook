@@ -1,11 +1,10 @@
 <ng-container>
   <div class="appointment">
   <div class="header">
-    @if (activeStep !== 1) {
-      <button pButton (click)="back()" icon="pi pi-angle-left">Back</button>
+    @if (activeStep > 1) {
+      <button class="back-button" pButton (click)="back()" icon="pi pi-arrow-left"></button>
     }
     <h3>Book Appointment</h3>
-    <!-- <p-button (click)="back()" icon="pi pi-times"></p-button> -->
   </div>
 
   <p-stepper [(value)]="activeStep" class="stepper">

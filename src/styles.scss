@@ -1,9 +1,11 @@
-.p-stepper-separator{
-    display: none;
+@import "primeicons/primeicons.css";
+
+:root{
+    --inter-font: "Inter", sans-serif;
 }
 
-.custom-step{
-    background-color: rgba(96, 165, 250, 1) !important;
+.p-stepper-separator{
+    display: none;
 }
 
 .step-list{
@@ -12,4 +14,14 @@
 
 .p-steppanels{
     padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: var(--inter-font);
+}
+
+.p-step:last-of-type{
+    flex: 1 !important;
 }
