@@ -5,7 +5,7 @@
   </div>
 
   @for (professional of professionals; track $index) {
-    <div class="professional-container">
+    <div [ngClass]="{'active': selected === $index}" class="professional-container" (click)="selectSpecialis($index)">
     <div class="professional">
       <div class="image">
       <img src="assets/images/img1.jpg" alt="img" />

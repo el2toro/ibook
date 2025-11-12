@@ -57,7 +57,7 @@
   }
 
   .continue {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     border-top: 1px solid #dcd5d5;
 
     button{
@@ -66,6 +66,10 @@
       border-radius: 10px;
       background-color: #2563eb;
       padding: 1rem;
+
+      &:hover:not(:disabled){
+        opacity: 0.9;
+      }
     }
   }
 }

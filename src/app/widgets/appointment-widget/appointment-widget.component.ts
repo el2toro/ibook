@@ -28,7 +28,7 @@ import { ButtonModule } from 'primeng/button';
 })
 export class AppointmentWidgetComponent implements OnInit {
   private messageService = inject(MessageService);
-
+  disabled = true;
   activeStep: number = 1;
 
   constructor() {}
@@ -44,5 +44,10 @@ export class AppointmentWidgetComponent implements OnInit {
     if(this.activeStep >= 5){ return };
 
     this.activeStep = this.activeStep + 1;
+  }
+
+  onSpecialistSelect(event: any){
+    console.log(event)
+    this.disabled = false;
   }
 }

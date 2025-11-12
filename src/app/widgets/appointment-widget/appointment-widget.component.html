@@ -48,7 +48,7 @@
     <p-step-panels class="step-panels">
       <p-step-panel [value]="1" class="step-panel">
         <ng-template #content let-activateCallback="activateCallback">
-          <app-specialist-selection></app-specialist-selection>
+          <app-specialist-selection (selectedSpecialist)="onSpecialistSelect($event)"></app-specialist-selection>
         </ng-template>
       </p-step-panel>
 
@@ -79,7 +79,7 @@
   </p-stepper>
   
   <div class="continue">
-    <button pButton (click)="continue()">Continue</button>
+    <button pButton [disabled]="disabled" (click)="continue()">Continue</button>
   </div>
 </div>
 </ng-container>
