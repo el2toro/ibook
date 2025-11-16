@@ -61,4 +61,13 @@ export class AppointmentWidgetComponent implements OnInit {
   onDateSelect(event: Date){
     this.disabled = false;
   }
+
+  onTimeSelect(event: string){
+    this.disabled = false;
+  }
+
+  onClientInfoComplete(event: any){
+    console.log(event);
+    this.disabled = false;
+  }
 }

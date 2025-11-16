@@ -24,14 +24,26 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 20px;
+        row-gap: 20px;
 
         .time-slot{
-            p{
-                border: 1px solid rgba(107, 114, 128, 1);
+                border: 2px solid rgb(204, 207, 211);
                 border-radius: 10px;
                 padding: 1rem;
                 background-color: white;
-            }
+                
+                &:hover{
+                  cursor: pointer;
+                  border: 2px solid rgba(59, 130, 246, 1);
+                }
+
+                span{
+                  display: flex;
+                  justify-content: center;
+                  color: rgba(31, 41, 55, 1);
+                  font-size: 1rem;
+                  font-weight: 500;
+                }
         }
      }
   }

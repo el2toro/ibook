@@ -72,13 +72,13 @@
 
        <p-step-panel [value]="4">
         <ng-template #content let-activateCallback="activateCallback">
-          <app-time-selection></app-time-selection>
+          <app-time-selection (selectedTime)="onTimeSelect($event)"></app-time-selection>
         </ng-template>
       </p-step-panel>
 
       <p-step-panel [value]="5">
         <ng-template #content let-activateCallback="activateCallback">
-          <app-client-information></app-client-information>
+          <app-client-information (clientInfoComplete)="onClientInfoComplete($event)"></app-client-information>
         </ng-template>
       </p-step-panel>
 

@@ -8,27 +8,30 @@
 
   <h3>Morning</h3>
   <div class="morning-slots">
-   @for (timeSlot of timeSlots; track $index) {
-    <div class="time-slot">
-      <p>09:00 AM</p>
+   @for (morningTime of morningTimes; track $index) {
+    <div class="time-slot" (click)="selectTime(morningTime)">
+      <span>{{ morningTime }}</span>
+      <span>AM</span>
     </div>
    }
   </div>
 
   <h3>Afternoon</h3>
   <div class="morning-slots">
-   @for (timeSlot of timeSlots; track $index) {
-    <div class="time-slot">
-      <p>09:00 AM</p>
+   @for (afternoonTime of afternoonTimes; track $index) {
+    <div class="time-slot" (click)="selectTime(afternoonTime)">
+       <span>{{ afternoonTime }}</span>
+      <span>PM</span>
     </div>
    }
   </div>
 
   <h3>Evning</h3>
   <div class="morning-slots">
-   @for (timeSlot of timeSlots; track $index) {
-    <div class="time-slot">
-      <span>09:00 AM</span>
+   @for (eveningTime of eveningTimes; track $index) {
+    <div class="time-slot" (click)="selectTime(eveningTime)">
+       <span>{{ eveningTime }}</span>
+      <span>PM</span>
     </div>
    }
   </div>
