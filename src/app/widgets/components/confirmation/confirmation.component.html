@@ -1,3 +1,73 @@
-<p>
-  confirmation works!
-</p>
+<div class="confirmation">
+  <div class="heading">
+    <div class="confirmation-icon">
+      <i class="pi pi-check"></i>
+    </div>
+    <h2>Booking Confirmed!</h2>
+    <p>Your appointment has been successfully scheduled</p>
+  </div>
+
+  <div class="details">
+    <h3> <i class="pi pi-calendar-clock"></i> Appointment Details</h3>
+
+        <div class="procedures">
+      @for (procedure of procedures ; track $index) {
+        <div class="procedure-item">
+         <div class="procedure-icon">
+          <i class="{{ procedure.icon }}"></i>
+         </div>
+      
+          <div class="procedure-info">
+            <h3>{{ procedure.name }}</h3>
+            <p>{{ procedure.time }} <span></span> {{ procedure.price }}</p>
+          </div>
+        </div>
+      }
+    </div>
+
+    <hr>
+
+    <div class="specialist">
+      <div class="image">
+         <img src="assets/images/img1.jpg" alt="img" /> 
+      </div>
+   
+      <div class="name">
+        <h3>Specialist</h3>
+        <p>Sarah Jonson</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="date">
+      <div class="date-icon">
+        <i class="pi pi-calendar"></i>
+      </div>
+      <div class="date-info">
+        <h3>Date</h3>
+        <p>{{ date | date: 'fullDate' }}</p>
+      </div>
+    </div>
+
+    <div class="time">
+      <div class="time-icon">
+        <i class="pi pi-clock"></i>
+      </div>
+      <div class="time-info">
+        <h3>Scheduled Time</h3>
+       <p>{{ time }}</p> 
+      </div>
+    </div>
+
+    <div class="location">
+      <div class="location-icon">
+      <i class="pi pi-map-marker"></i>
+      </div>
+    <div class="location-info">
+      <h3>Location</h3>
+    <p>{{ location }}</p> 
+    </div>
+    </div>
+  </div>
+</div>
