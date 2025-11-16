@@ -1,29 +1,18 @@
-// --------------------------------------
-// Color Variables (HEX)
-// --------------------------------------
-$color-text-dark: #1f2937;        // rgba(31, 41, 55, 1)
-$color-text-muted: #6b7280;       // rgba(107, 114, 128, 1)
+$color-text-dark: #1f2937; // rgba(31, 41, 55, 1) 
+$color-text-muted: #6b7280; // rgba(107, 114, 128, 1) 
+$color-white: #ffffff; // rgba(255, 255, 255, 1)
+$color-shadow: rgba(0, 0, 0, 0.05); 
+$color-border-transparent: transparent; 
+$color-primary: #1976d2; // hover + active border 
+$color-star: #eab308; // yellow star rating 
+$color-availability-bg: #dcfce7; // light green bg 
+$color-availability: #15803d; // dark green text + dot 
+$color-arrow: #9ca3af; // gray arrow
 
-$color-white: #ffffff;            // rgba(255, 255, 255, 1)
-$color-shadow: rgba(0, 0, 0, 0.05);
-
-$color-border-transparent: transparent;
-$color-primary: #1976d2;          // hover + active border
-
-$color-star: #eab308;             // yellow star rating
-$color-availability-bg: #dcfce7;  // light green bg
-$color-availability: #15803d;     // dark green text + dot
-$color-arrow: #9ca3af;            // gray arrow
-
-
-
-// --------------------------------------
-// Updated Styles
-// --------------------------------------
 .specialist {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-bottom: 10px;
+  padding-left: 1rem;
+  padding-right: 1rem; 
+  margin-bottom: 0.625rem;  
 
   .heading {
     line-height: 1.1rem;
@@ -45,22 +34,22 @@ $color-arrow: #9ca3af;            // gray arrow
     justify-content: space-between;
     align-items: center;
     background-color: $color-white;
-    border-radius: 15px;
-    box-shadow: 0 1px 2px $color-shadow;
-    padding-right: 15px;
-    padding-left: 15px;
-    border: 2px solid $color-border-transparent;
-    margin-bottom: 10px;
+    border-radius: 1rem;  
+    box-shadow: 0 0.0625rem 0.125rem $color-shadow; 
+    padding-right: 1rem; 
+    padding-left: 1rem; 
+    border: 0.125rem solid $color-border-transparent; 
+    margin-bottom: 0.625rem;   
 
     .professional {
       display: flex;
       align-items: center;
 
       .image {
-        width: 64px;
-        height: 64px;
+        width: 4rem;           
+        height: 4rem;           
         border-radius: 50%;
-        margin-right: 20px;
+        margin-right: 1.25rem;   
 
         img {
           width: 100%;
@@ -72,24 +61,24 @@ $color-arrow: #9ca3af;            // gray arrow
 
       .details {
         .name {
-          line-height: 0.25rem;
-
+          line-height: 0.25rem; 
           h3 {
             color: $color-text-dark;
-            font-size: 1.125rem;
+            font-size: 1.125rem;   
           }
 
           p {
             color: $color-text-muted;
-            font-size: 0.85rem;
+            font-size: 0.85rem; 
+            text-wrap: nowrap;
           }
         }
 
         .rating {
           display: flex;
           align-items: center;
-          gap: 5px;
-          margin-top: -10px;
+          gap: 0.25rem;
+          margin-top: -0.625rem; 
 
           p {
             font-weight: 500;
@@ -97,22 +86,22 @@ $color-arrow: #9ca3af;            // gray arrow
 
           i {
             color: $color-star;
-            margin-top: -5px;
+            margin-top: -0.25rem; 
           }
 
           .availability {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem;          
             background-color: $color-availability-bg;
-            padding: 8px;
-            border-radius: 20px;
-            height: 20px;
-            margin-left: 10px;
+            padding: 0.5rem;       
+            border-radius: 1.25rem; 
+            height: 1.25rem;        
+            margin-left: 0.5rem;  
 
             span:first-child {
-              width: 7px;
-              height: 7px;
+              width: 0.4375rem;   
+              height: 0.4375rem;  
               border-radius: 50%;
               background-color: $color-availability;
             }
@@ -129,7 +118,7 @@ $color-arrow: #9ca3af;            // gray arrow
 
     .arrow {
       color: $color-arrow;
-      margin-left: 5rem;
+      margin-right: -0.6rem;
 
       i {
         font-size: 1.5rem;
@@ -137,12 +126,12 @@ $color-arrow: #9ca3af;            // gray arrow
     }
 
     &:hover {
-      border: 2px solid $color-primary;
+      border: 0.125rem solid $color-primary; 
       cursor: pointer;
     }
   }
 }
 
 .active {
-  border: 2px solid $color-primary !important;
+  border: 0.125rem solid $color-primary !important;
 }
