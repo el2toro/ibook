@@ -90,8 +90,10 @@
     </p-step-panels>
   </p-stepper>
   
-  <div class="continue">
+  @if (activeStep < 6) {
+    <div class="continue">
     <button pButton [disabled]="disabled" (click)="continue()">Continue</button>
   </div>
+  }
 </div>
 </ng-container>

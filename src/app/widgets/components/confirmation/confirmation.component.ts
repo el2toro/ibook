@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ButtonModule } from 'primeng/button';
 
 interface Procedure {
   name: string;
@@ -12,7 +13,7 @@ interface Procedure {
   selector: 'app-confirmation',
   templateUrl: './confirmation.component.html',
   styleUrls: ['./confirmation.component.scss'],
-  imports: [CommonModule]
+  imports: [CommonModule, ButtonModule]
 })
 export class ConfirmationComponent implements OnInit {
   procedures: Procedure[] = [
