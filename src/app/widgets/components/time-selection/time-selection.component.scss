@@ -1,50 +1,65 @@
-.time-selection{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 1.5rem;
-    
-    .heading {
+// --------------------------------------
+// Color Variables (HEX)
+// --------------------------------------
+$color-text-dark: #1f2937;        // rgba(31, 41, 55, 1)
+$color-text-muted: #6b7280;       // rgba(107, 114, 128, 1)
+
+$color-white: #ffffff;            // white
+$color-primary: #3b82f6;          // rgba(59, 130, 246, 1)
+
+$color-border-light: #cccfD3;     // rgb(204, 207, 211)
+
+
+// --------------------------------------
+// Updated Styles
+// --------------------------------------
+.time-selection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 1.5rem;
+
+  .heading {
     line-height: 1.1rem;
 
     h2 {
-      color: rgba(31, 41, 55, 1);
+      color: $color-text-dark;
       font-size: 1.5rem;
       font-weight: 700;
     }
 
     p {
-      color: rgba(107, 114, 128, 1);
+      color: $color-text-muted;
       font-size: 1.1rem;
     }
   }
 
-  .time-container{
-     .morning-slots{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 20px;
-        row-gap: 20px;
+  .time-container {
+    .morning-slots {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 20px;
+      row-gap: 20px;
 
-        .time-slot{
-                border: 2px solid rgb(204, 207, 211);
-                border-radius: 10px;
-                padding: 1rem;
-                background-color: white;
-                
-                &:hover{
-                  cursor: pointer;
-                  border: 2px solid rgba(59, 130, 246, 1);
-                }
+      .time-slot {
+        border: 2px solid $color-border-light;
+        border-radius: 10px;
+        padding: 1rem;
+        background-color: $color-white;
 
-                span{
-                  display: flex;
-                  justify-content: center;
-                  color: rgba(31, 41, 55, 1);
-                  font-size: 1rem;
-                  font-weight: 500;
-                }
+        &:hover {
+          cursor: pointer;
+          border: 2px solid $color-primary;
         }
-     }
+
+        span {
+          display: flex;
+          justify-content: center;
+          color: $color-text-dark;
+          font-size: 1rem;
+          font-weight: 500;
+        }
+      }
+    }
   }
 }

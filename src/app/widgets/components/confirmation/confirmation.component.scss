@@ -1,3 +1,23 @@
+// --------------------------------------
+// Color Variables (HEX)
+// --------------------------------------
+$color-success-bg: #dcfce7;      // rgba(220, 252, 231, 1)
+$color-success: #22c55e;         // rgba(34, 197, 94, 1)
+
+$color-text-dark: #1f2937;       // rgba(31, 41, 55, 1)
+$color-text-muted: #6b7280;      // rgba(107, 114, 128, 1)
+
+$color-border: #e5e7eb;          // rgba(229, 231, 235, 1)
+$color-gray-bg: #f3f4f6;         // rgba(243, 244, 246, 1)
+
+$color-primary: #3b82f6;         // rgba(59, 130, 246, 1)
+
+$color-dot: #2b2e35;             // rgb(43, 46, 53)
+
+
+// --------------------------------------
+// Component Styles
+// --------------------------------------
 .confirmation {
   display: flex;
   flex-direction: column;
@@ -23,23 +43,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(220, 252, 231, 1);
+      background-color: $color-success-bg;
 
       i {
-        color: rgba(34, 197, 94, 1);
+        color: $color-success;
         font-size: 1.5rem;
         font-weight: 700;
       }
     }
 
     h2 {
-      color: rgba(31, 41, 55, 1);
+      color: $color-text-dark;
       font-size: 1.5rem;
       font-weight: 700;
     }
 
     p {
-      color: rgba(107, 114, 128, 1);
+      color: $color-text-muted;
       font-size: 1.1rem;
       margin-top: -0.25rem;
     }
@@ -48,16 +68,16 @@
   .details {
     display: flex;
     flex-direction: column;
-    border: 2px solid rgba(229, 231, 235, 1);
+    border: 2px solid $color-border;
     border-radius: 0.5rem;
     width: 100%;
     padding: 2rem;
     margin-top: 1rem;
     gap: 1rem;
 
-    hr{
+    hr {
       border: none;
-      border-top: 1px solid rgba(229, 231, 235, 1);
+      border-top: 1px solid $color-border;
       margin: 0;
     }
 
@@ -71,37 +91,47 @@
         align-items: center;
         gap: 1rem;
 
-        .procedure-icon{
-            display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 3rem;
-        height: 3rem;
-        background-color: rgba(243, 244, 246, 1);
-        border-radius: 50%;
-        i {
-          color: rgba(59, 130, 246, 1);
-          font-size: 1.25rem;
-        }
+        .procedure-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 3rem;
+          height: 3rem;
+          background-color: $color-gray-bg;
+          border-radius: 50%;
+
+          i {
+            color: $color-primary;
+            font-size: 1.25rem;
+          }
         }
       }
 
       .procedure-info {
         display: flex;
         flex-direction: column;
+        gap: 0.25rem;
 
-       p{
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        span{
-            display: inline-block;
-          width: 0.25rem;
-            height: 0.25rem;
-            background-color: rgb(43, 46, 53);
-            border-radius: 50%;
+        h3{
+          color: $color-text-dark;
+            font-size: 1.125rem;
         }
-       }
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: $color-text-muted;
+          font-size: 0.85rem;
+
+          span {
+            display: inline-block;
+            width: 0.25rem;
+            height: 0.25rem;
+            background-color: $color-text-muted;
+            border-radius: 50%;
+          }
+        }
       }
     }
 
@@ -130,80 +160,60 @@
         display: flex;
         flex-direction: column;
         align-content: center;
+        gap: 0.25rem;
+
+        h3{
+          color: $color-text-dark;
+          font-size: 1.125rem;
+        }
 
         p {
-          color: rgba(75, 85, 99, 1);
-          font-size: 1rem;
+          color: $color-text-muted;
+          font-size: 0.85rem;
         }
       }
     }
 
-    .date {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-
-      .date-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 3rem;
-        height: 3rem;
-        background-color: rgba(243, 244, 246, 1);
-        border-radius: 50%;
-        i {
-          color: rgba(59, 130, 246, 1);
-          font-size: 1.25rem;
-        }
-      }
-
-      .date-info {
-      }
-    }
-
-    .time {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-
-      .time-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 3rem;
-        height: 3rem;
-        background-color: rgba(243, 244, 246, 1);
-        border-radius: 50%;
-        i {
-          color: rgba(59, 130, 246, 1);
-          font-size: 1.25rem;
-        }
-      }
-
-      .time-info {
-      }
-    }
-
+    .date,
+    .time,
     .location {
       display: flex;
       align-items: center;
       gap: 1rem;
 
+      .date-icon,
+      .time-icon,
       .location-icon {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 3rem;
         height: 3rem;
-        background-color: rgba(243, 244, 246, 1);
+        background-color: $color-gray-bg;
         border-radius: 50%;
+
         i {
-          color: rgba(59, 130, 246, 1);
+          color: $color-primary;
           font-size: 1.25rem;
         }
       }
 
+      .date-info,
+      .time-info,
       .location-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        h3{
+          color: $color-text-dark;
+          font-size: 1.125rem;
+        }
+
+        p {
+          color: $color-text-muted;
+          font-size: 0.85rem;
+        }
       }
     }
   }

@@ -1,18 +1,30 @@
+// --------------------------------------
+// Color Variables (HEX)
+// --------------------------------------
+$color-white: #ffffff;
+$color-primary: #2563eb;         // dark blue
+$color-primary-dark: #1d4ed8;    // darker shade for gradient
+$color-primary-light: #60a5fa;   // lighter shade for stepper active
+$color-primary-step: #1976d2;    // stepper normal
+$color-border-light: #d1d1d4;
+$color-border-muted: #dcd5d5;
+$color-bg-light: #dcd8d81a;      // semi-transparent background
+
+// --------------------------------------
+// Updated Styles
+// --------------------------------------
 .appointment {
   align-items: center;
- // max-width: 900px;
- // width: 100%;
- 
-  border: 2px solid #d1d1d4;
+  border: 2px solid $color-border-light;
   border-radius: 5px;
-  background-color: #dcd8d81a;
+  background-color: $color-bg-light;
 
   .header {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    background: linear-gradient(#2563eb, #1d4ed8);
-    border-radius: 5px 5px 0px 0px;
+    background: linear-gradient($color-primary, $color-primary-dark);
+    border-radius: 5px 5px 0 0;
 
     .back-button {
       background-color: transparent;
@@ -23,7 +35,7 @@
     }
 
     h3 {
-      color: white;
+      color: $color-white;
       font-size: 1.25rem;
       grid-column: 2;
       justify-self: center;
@@ -34,27 +46,26 @@
 
   .stepper {
     height: 50vh !important;
- overflow: scroll;
+    overflow: scroll;
+
     .step-list {
-      background-color: #1d4ed8;
-      padding: 0;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      background-color: $color-primary-dark;
+      padding: 0 1rem;
       justify-content: center;
 
       .step {
         flex: 1;
         height: 7px;
         border-radius: 20px;
-        background-color: #1976d2;
+        background-color: $color-primary-step;
         display: inline-block;
         line-height: 40px;
         text-align: center;
         transition: all 0.3s ease;
 
         &.custom-step {
-          background-color: #60a5fa;
-          color: white;
+          background-color: $color-primary-light;
+          color: $color-white;
         }
       }
     }
@@ -62,16 +73,16 @@
 
   .continue {
     padding: 1rem 1.5rem;
-    border-top: 1px solid #dcd5d5;
+    border-top: 1px solid $color-border-muted;
 
-    button{
+    button {
       width: 100%;
       font-weight: 500;
       border-radius: 10px;
-      background-color: #2563eb;
+      background-color: $color-primary;
       padding: 1rem;
 
-      &:hover:not(:disabled){
+      &:hover:not(:disabled) {
         opacity: 0.9;
       }
     }
@@ -79,15 +90,14 @@
 }
 
 .steps-details {
-  background-color: #1d4ed8;
+  background-color: $color-primary-dark;
   display: flex;
   justify-content: space-between;
   text-align: center;
-  padding: 0rem 1.5rem;
-  padding-bottom: 1.5rem;
+  padding: 0 1.5rem 1.5rem 1.5rem;
 
   p {
     margin: 0.2rem 0;
-    color: white;
+    color: $color-white;
   }
 }

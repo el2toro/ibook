@@ -1,3 +1,25 @@
+// --------------------------------------
+// Color Variables (HEX)
+// --------------------------------------
+$color-text-dark: #1f2937;        // rgba(31, 41, 55, 1)
+$color-text-muted: #6b7280;       // rgba(107, 114, 128, 1)
+
+$color-white: #ffffff;            // rgba(255, 255, 255, 1)
+$color-shadow: rgba(0, 0, 0, 0.05);
+
+$color-border-transparent: transparent;
+$color-primary: #1976d2;          // hover + active border
+
+$color-star: #eab308;             // yellow star rating
+$color-availability-bg: #dcfce7;  // light green bg
+$color-availability: #15803d;     // dark green text + dot
+$color-arrow: #9ca3af;            // gray arrow
+
+
+
+// --------------------------------------
+// Updated Styles
+// --------------------------------------
 .specialist {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -7,13 +29,13 @@
     line-height: 1.1rem;
 
     h2 {
-      color: rgba(31, 41, 55, 1);
+      color: $color-text-dark;
       font-size: 1.5rem;
       font-weight: 700;
     }
 
     p {
-      color: rgba(107, 114, 128, 1);
+      color: $color-text-muted;
       font-size: 1.1rem;
     }
   }
@@ -22,12 +44,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: $color-white;
     border-radius: 15px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px $color-shadow;
     padding-right: 15px;
     padding-left: 15px;
-    border: 2px solid transparent;
+    border: 2px solid $color-border-transparent;
     margin-bottom: 10px;
 
     .professional {
@@ -51,13 +73,14 @@
       .details {
         .name {
           line-height: 0.25rem;
+
           h3 {
-            color: #1F2937;
+            color: $color-text-dark;
             font-size: 1.125rem;
           }
 
           p {
-            color: #6b7280;
+            color: $color-text-muted;
             font-size: 0.85rem;
           }
         }
@@ -68,12 +91,12 @@
           gap: 5px;
           margin-top: -10px;
 
-          p{
-             font-weight: 500;
+          p {
+            font-weight: 500;
           }
 
-          i{
-            color: #EAB308;
+          i {
+            color: $color-star;
             margin-top: -5px;
           }
 
@@ -81,7 +104,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background-color: #DCFCE7;
+            background-color: $color-availability-bg;
             padding: 8px;
             border-radius: 20px;
             height: 20px;
@@ -91,11 +114,11 @@
               width: 7px;
               height: 7px;
               border-radius: 50%;
-              background-color: #15803d;
+              background-color: $color-availability;
             }
 
             span:last-child {
-              color: #15803d;
+              color: $color-availability;
               font-weight: 500;
               font-size: 0.75rem;
             }
@@ -105,7 +128,7 @@
     }
 
     .arrow {
-      color: #9ca3af;
+      color: $color-arrow;
       margin-left: 5rem;
 
       i {
@@ -114,12 +137,12 @@
     }
 
     &:hover {
-      border: 2px solid #1976d2;
+      border: 2px solid $color-primary;
       cursor: pointer;
     }
   }
 }
 
-.active{
-  border: 2px solid #1976d2 !important;
+.active {
+  border: 2px solid $color-primary !important;
 }
