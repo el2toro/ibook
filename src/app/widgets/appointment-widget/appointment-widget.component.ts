@@ -8,6 +8,7 @@ import { ClientInformationComponent } from '../components/client-information/cli
 import { ConfirmationComponent } from '../components/confirmation/confirmation.component';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
+import { TimeSelectionComponent } from "../components/time-selection/time-selection.component";
 
 @Component({
   selector: 'app-appointment-widget',
@@ -21,7 +22,8 @@ import { ButtonModule } from 'primeng/button';
     ClientInformationComponent,
     ConfirmationComponent,
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    TimeSelectionComponent
 ],
   providers: [MessageService],
   standalone: true,
@@ -43,7 +45,7 @@ export class AppointmentWidgetComponent implements OnInit {
   continue() {
     this.disabled = true;
     
-    if(this.activeStep >= 5){ return };
+    if(this.activeStep >= 6){ return };
 
     this.activeStep = this.activeStep + 1;
   }
@@ -54,5 +56,9 @@ export class AppointmentWidgetComponent implements OnInit {
 
   onProcedureSelect(event: boolean){
     this.disabled = event;
+  }
+
+  onDateSelect(event: Date){
+    this.disabled = false;
   }
 }

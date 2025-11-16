@@ -38,10 +38,16 @@
           <span class="step" [ngClass]="{ 'custom-step': activeStep === 5 }"></span>
         </ng-template>
       </p-step>
+
+       <p-step [value]="6">
+        <ng-template #content let-activateCallback="activateCallback" let-value="value">
+          <span class="step" [ngClass]="{ 'custom-step': activeStep === 6 }"></span>
+        </ng-template>
+      </p-step>
     </p-step-list>
 
     <div class="steps-details">
-      <p>Step {{ activeStep }} of 5</p>
+      <p>Step {{ activeStep }} of 6</p>
       <p>Select Specialist</p>
     </div>
 
@@ -60,17 +66,23 @@
 
       <p-step-panel [value]="3">
         <ng-template #content let-activateCallback="activateCallback">
-          <app-date-time-selection></app-date-time-selection>
+          <app-date-time-selection (selectDateEvent)="onDateSelect($event)"></app-date-time-selection>
         </ng-template>
       </p-step-panel>
 
-      <p-step-panel [value]="4">
+       <p-step-panel [value]="4">
+        <ng-template #content let-activateCallback="activateCallback">
+          <app-time-selection></app-time-selection>
+        </ng-template>
+      </p-step-panel>
+
+      <p-step-panel [value]="5">
         <ng-template #content let-activateCallback="activateCallback">
           <app-client-information></app-client-information>
         </ng-template>
       </p-step-panel>
 
-      <p-step-panel [value]="5">
+      <p-step-panel [value]="6">
         <ng-template #content let-activateCallback="activateCallback">
           <app-confirmation></app-confirmation>
         </ng-template>

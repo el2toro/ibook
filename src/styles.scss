@@ -2,6 +2,7 @@
 
 :root{
     --inter-font: "Inter", sans-serif;
+    --p-datepicker-date-border-radius: 25% !important;
 }
 
 .p-stepper-separator{
@@ -27,4 +28,15 @@ body{
 
 .active{
   border: 2px solid #1976d2 !important;
+}
+
+.p-datepicker .p-datepicker-panel{
+    border-radius: 15px !important;
+}
+
+.p-datepicker-title{
+    button{
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
 }
