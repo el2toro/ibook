@@ -1,3 +1,10 @@
-<p>
-  date-selection works!
-</p>
+<div class="date-selection">
+   <div class="heading">
+    <h2>Select Date</h2>
+    <p>Chose your preferred date</p>
+  </div>
+  <p-datepicker 
+[(ngModel)]="date" 
+[inline]="true" 
+[showWeek]="true" (onSelect)="onDateSelect()"/>
+</div>
