@@ -1,3 +1,39 @@
-<p>
-  client-information works!
-</p>
+<div class="client-info">
+  <div class="heading">
+    <h2>Client Information</h2>
+    <p>Provide your contact details</p>
+  </div>
+
+  <form [formGroup]="formGroup">
+    <div class="form-group">
+       <label for="fullName">Full Name *</label> 
+       <p-iconfield>
+        <p-inputicon class="pi pi-user" />
+        <input formControlName="fullName" pInputText id="fullName" autocomplete="off" placeholder="John Doe"/>
+    </p-iconfield>
+    </div>
+    <div class="form-group">
+       <label for="email">Email Address *</label> 
+       <p-iconfield>
+        <p-inputicon class="pi pi-envelope" />
+        <input formControlName="email" pInputText id="email" type="email" autocomplete="off" placeholder="john@example.com"/>
+    </p-iconfield>
+    </div>
+
+    <div class="form-group">
+       <label for="phone">Phone Number *</label> 
+       <p-iconfield>
+        <p-inputicon class="pi pi-phone" />
+        <input formControlName="phone" pInputText id="phone" autocomplete="off" placeholder="+1 234 567 890"/>
+    </p-iconfield>
+  </div>
+
+
+   <div class="form-group">
+       <label for="notes">Additional Notes (Optional)</label> 
+       <p-iconfield>
+        <!-- <p-inputicon class="pi pi-info-circle" /> -->
+        <textarea formControlName="notes" pInputTextarea id="notes" rows="4" placeholder="Any specific requirements?"></textarea>
+    </p-iconfield>
+  </div>
+</form>
