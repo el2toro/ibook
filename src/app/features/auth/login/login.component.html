@@ -1,3 +1,60 @@
-<p>
-  login works!
-</p>
+<div class="login-container">
+  <div class="login-card">
+    <div class="main-content">
+      <div class="heading">
+      <div class="logo">
+        <!-- <img src="assets/logo.png" alt="App Logo" class="logo" /> -->
+        <i class="pi pi-heart-fill"></i>
+      </div>
+      <h3>Welcome Back</h3>
+      <p>Sign in to continue to your account</p>
+    </div>
+    <form class="form" [formGroup]="formGroup">
+      <div class="form-field">
+        <label for="email">Email Address</label>
+        <p-iconfield>
+          <p-inputicon class="pi pi-envelope" />
+          <input formControlName="email" type="text" pInputText placeholder="mail@example.com" />
+        </p-iconfield>
+      </div>
+
+      <div class="form-field">
+        <label for="username">Password</label>
+        <p-iconfield>
+          <p-inputicon class="pi pi-lock" />
+          <input formControlName="password" type="password" pInputText placeholder="Password" />
+        </p-iconfield>
+      </div>
+      <div class="form-field options">
+        <span><p-checkbox formControlName="rememberMe" [binary]="true" /> Remember me</span>
+        <a href="#" class="forgot-password">Forgot password?</a>
+      </div>
+      <button pButton type="submit">Sign In</button>
+    </form>
+    <div class="continue-with">
+      <hr />
+      <span>Or continue with</span>
+      <hr />
+    </div>
+    <div class="social-buttons">
+      <button pButton type="button" class="google-btn">
+        <i class="pi pi-google"></i>
+      </button>
+      <button pButton type="button" class="facebook-btn">
+        <i class="pi pi-facebook"></i>
+      </button>
+      <button pButton type="button" class="facebook-btn">
+        <i class="pi pi-apple"></i>
+      </button>
+    </div>
+    <span class="signup">Don't have an account? <a href="">Sign up</a></span>
+    </div>
+
+    <div class="recaptcha-info">
+    <span
+    >Protected by reCAPTCHA and subject to the <a href="">Privacy Policy</a> and
+    <a href="">Terms of Service</a></span
+  >
+  </div>
+  </div>
+</div>
