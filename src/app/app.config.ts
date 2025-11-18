@@ -5,6 +5,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { routes } from './app.routes';
 import { BluePreset } from '../styles/themes/custom-theme';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
             theme: {
                 preset: BluePreset
             }
-        })
+        }),
+    provideHttpClient()    
   ]
 };

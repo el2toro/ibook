@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { AppointmentWidgetComponent } from "./widgets/appointment-widget/appointment-widget.component";
+import { ShellComponent } from "./layouts/shell/shell.component";
 
 @Component({
   selector: 'app-root',
-  imports: [AppointmentWidgetComponent],
+  imports: [ShellComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
