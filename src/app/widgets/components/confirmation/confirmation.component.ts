@@ -1,13 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
+import { BookingModel } from '../../models/booking-model';
+import { BookingService } from '../../services/booking.service';
 
-interface Procedure {
-  name: string;
-  icon: string;
-  time?: string;
-  price?: string;
-}
 
 @Component({
   selector: 'app-confirmation',
@@ -16,19 +12,23 @@ interface Procedure {
   imports: [CommonModule, ButtonModule]
 })
 export class ConfirmationComponent implements OnInit {
-  procedures: Procedure[] = [
-    { name: 'Haircut', icon: 'pi pi-verified', time: '30 minutes', price: '$30' },
-    { name: 'Manicure', icon: 'pi pi-verified', time: '45 minutes', price: '$25' },
-    { name: 'Hair Coloring', icon: 'pi pi-verified', time: '60 minutes', price: '$60' },
-  ];
+  private bookingService = inject(BookingService);
+  bookingState!: BookingModel;
 
-  time = '10:00 AM';
   date = new Date();
   location = '123 Main St, City, Country';
 
   constructor() { }
 
   ngOnInit() {
+    this.getBookingState();
   }
 
+  getBookingState(){
+    this.bookingService.getBookingState().subscribe((booking) => {
+      if(booking){
+        this.bookingState = booking;
+      }
+    });
+  }
 }

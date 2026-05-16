@@ -9,15 +9,15 @@
 
   <div class="details">
     <div class="procedures">
-      @for (procedure of procedures ; track $index) {
+      @for (procedure of bookingState?.procedures; track $index) {
         <div class="procedure-item">
          <div class="procedure-icon">
-          <i class="{{ procedure.icon }}"></i>
+          <i class="pi pi-verified"></i>
          </div>
       
           <div class="procedure-info">
             <h3>{{ procedure.name }}</h3>
-            <p>{{ procedure.time }} <span></span> {{ procedure.price }}</p>
+            <p>{{ bookingState?.time }} <span></span> {{ procedure.price }}</p>
           </div>
         </div>
       }
@@ -27,12 +27,12 @@
 
     <div class="specialist">
       <div class="image">
-         <img src="assets/images/img1.jpg" alt="img" /> 
+         <img src="{{ bookingState?.specialist?.imageUrl }}" alt="img" /> 
       </div>
    
       <div class="name">
         <h3>Specialist</h3>
-        <p>Sarah Jonson</p>
+        <p>{{ bookingState?.specialist?.name }}</p>
       </div>
     </div>
 
@@ -44,7 +44,7 @@
       </div>
       <div class="date-info">
         <h3>Date</h3>
-        <p>{{ date | date: 'fullDate' }}</p>
+        <p>{{ bookingState?.date | date: 'fullDate' }}</p>
       </div>
     </div>
 
@@ -54,7 +54,7 @@
       </div>
       <div class="time-info">
         <h3>Scheduled Time</h3>
-       <p>{{ time }}</p> 
+       <p>{{ bookingState?.time }}</p> 
       </div>
     </div>
 

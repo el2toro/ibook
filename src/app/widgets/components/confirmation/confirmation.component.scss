@@ -19,7 +19,7 @@ $color-bg-light-green: #f0fdf4;  // rgba(240, 253, 244, 1)
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 
   h3,
   p {
@@ -31,6 +31,7 @@ $color-bg-light-green: #f0fdf4;  // rgba(240, 253, 244, 1)
     flex-direction: column;
     align-items: center;
     text-align: center;
+    line-height: 2rem;
 
     .confirmation-icon {
       width: 5rem;
