@@ -10,7 +10,7 @@ import { DatePickerModule } from 'primeng/datepicker';
 })
 export class DateTimeSelectionComponent implements OnInit {
   @Output() selectDateEvent = new EventEmitter();
-  date: Date[] | undefined;
+  date!: Date;
 
   constructor() { }
 

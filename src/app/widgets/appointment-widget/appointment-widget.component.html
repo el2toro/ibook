@@ -1,5 +1,4 @@
-<ng-container>
-  <div class="appointment">
+<div class="appointment">
   <div class="header">
     @if (activeStep > 1) {
       <button class="back-button" pButton (click)="back()" icon="pi pi-arrow-left"></button>
@@ -54,7 +53,7 @@
     <p-step-panels class="step-panels">
       <p-step-panel [value]="1" class="step-panel">
         <ng-template #content let-activateCallback="activateCallback">
-          <app-specialist-selection (selectedSpecialist)="onSpecialistSelect($event)"></app-specialist-selection>
+          <app-specialist-selection [specialist]="bookingState.specialist" (selectedSpecialist)="onSpecialistSelect($event)"></app-specialist-selection>
         </ng-template>
       </p-step-panel>
 
@@ -92,8 +91,7 @@
   
   @if (activeStep < 6) {
     <div class="continue">
-    <button pButton [disabled]="disabled" (click)="continue()">Continue</button>
+    <button pButton [disabled]="isDisabled" (click)="continue()">Continue</button>
   </div>
   }
 </div>
-</ng-container>

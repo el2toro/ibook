@@ -18,6 +18,7 @@ $color-bg-light: #dcd8d81a;      // semi-transparent background
   border: 2px solid $color-border-light;
   border-radius: 5px;
   background-color: $color-bg-light;
+  height: 100vh;
 
   .header {
     display: grid;
@@ -45,9 +46,7 @@ $color-bg-light: #dcd8d81a;      // semi-transparent background
   }
 
   .stepper {
-    height: 50vh !important;
-    overflow: scroll;
-
+   
     .step-list {
       background-color: $color-primary-dark;
       padding: 0 1rem;
@@ -72,6 +71,10 @@ $color-bg-light: #dcd8d81a;      // semi-transparent background
   }
 
   .continue {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 10px;
     padding: 1rem 1.5rem;
     border-top: 1px solid $color-border-muted;
 
@@ -100,4 +103,16 @@ $color-bg-light: #dcd8d81a;      // semi-transparent background
     margin: 0.2rem 0;
     color: $color-white;
   }
+}
+
+  .step-panels::-webkit-scrollbar {
+  display: none;
+}
+
+.step-panels{
+   display: flex;
+  flex-direction: column;
+  max-height: 80%;
+  overflow-y: scroll;
+
 }

@@ -9,6 +9,11 @@ import { ConfirmationComponent } from '../components/confirmation/confirmation.c
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { TimeSelectionComponent } from "../components/time-selection/time-selection.component";
+import { SpecialistModel } from '../models/specialist-model';
+import { BookingService } from '../services/booking.service';
+import { BookingModel } from '../models/booking-model';
+import { ProcedureModel } from '../models/procedure-model';
+import { CustomerModel } from '../models/customer-model';
 
 @Component({
   selector: 'app-appointment-widget',
@@ -30,12 +35,19 @@ import { TimeSelectionComponent } from "../components/time-selection/time-select
 })
 export class AppointmentWidgetComponent implements OnInit {
   private messageService = inject(MessageService);
-  disabled = true;
+  private bookingService = inject(BookingService);
+  bookingState!: BookingModel;
   activeStep: number = 1;
+
+  get isDisabled() : boolean {
+    return this.isButtonContinueDisabled();
+  }
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getBookingState();
+  }
 
   back() {
     if(this.activeStep === 1){ return }
@@ -43,31 +55,64 @@ export class AppointmentWidgetComponent implements OnInit {
   }
 
   continue() {
-    this.disabled = true;
-    
     if(this.activeStep >= 6){ return };
 
     this.activeStep = this.activeStep + 1;
+    this.bookingService.updateBookingState(this.bookingState);
   }
 
-  onSpecialistSelect(event: any){
-    this.disabled = false;
+  onSpecialistSelect(specialist: SpecialistModel){
+    this.bookingState.specialist = specialist;
   }
 
-  onProcedureSelect(event: boolean){
-    this.disabled = event;
+  onProcedureSelect(procedures: ProcedureModel[]){
+    this.bookingState.procedures = procedures;
   }
 
-  onDateSelect(event: Date){
-    this.disabled = false;
+  onDateSelect(date: Date){
+    this.bookingState.date = date;
   }
 
-  onTimeSelect(event: string){
-    this.disabled = false;
+  onTimeSelect(time: string){
+    this.bookingState.time = time;
   }
 
-  onClientInfoComplete(event: any){
-    console.log(event);
-    this.disabled = false;
+  onClientInfoComplete(clientInfo: CustomerModel){
+    this.bookingState.client = clientInfo;
+  }
+
+  getBookingState() : void {
+   this.bookingService.getBookingState().subscribe({
+      next: (bookingState) => {
+        this.bookingState = bookingState ?? this.buildBookingInitialState();
+      }
+    });
+  }
+
+  buildBookingInitialState() : BookingModel {
+    return {
+      specialist: null!,
+      procedures: null!,
+      date: null!,
+      time: '',
+      client: null!
+    }
+  }
+
+  isButtonContinueDisabled() : boolean {
+    switch(this.activeStep){
+      case 1:
+        return !this.bookingState.specialist;
+      case 2:
+        return !this.bookingState.procedures || this.bookingState.procedures.length === 0;
+      case 3:
+        return !this.bookingState.date; 
+      case 4:  
+        return !this.bookingState.time;
+      case 5:  
+      return !this.bookingState.client;
+      default:
+        return true;
+    }
   }
 }
