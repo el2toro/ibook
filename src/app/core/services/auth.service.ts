@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { tap } from "rxjs";
+import { Observable, tap } from "rxjs";
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -9,7 +9,8 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   /** Called after user logs in */
-  login(credentials: { email: string; password: string }) {
+  login(credentials: { email: string; password: string }) : Observable<any>{
+    this.accessToken = 'acess-token-mock'
     return this.http.post<{ accessToken: string }>(
       '/api/auth/login',
       credentials,
@@ -28,7 +29,7 @@ export class AuthService {
 
   /** Check if logged in */
   isLoggedIn(): boolean {
-    return false // !!this.accessToken;
+    return !!this.accessToken;
   }
 
   /** Refresh token using HttpOnly cookie */

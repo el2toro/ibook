@@ -29,7 +29,7 @@
         <span><p-checkbox formControlName="rememberMe" [binary]="true" /> Remember me</span>
         <a href="#" class="forgot-password">Forgot password?</a>
       </div>
-      <button pButton type="submit">Sign In</button>
+      <button pButton (click)="signIn()">Sign In</button>
     </form>
     <div class="continue-with">
       <hr />
