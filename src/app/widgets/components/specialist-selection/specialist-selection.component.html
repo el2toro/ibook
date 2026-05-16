@@ -8,20 +8,20 @@
     <div [ngClass]="{'active': selected === $index}" class="professional-container" (click)="selectSpecialis($index)">
     <div class="professional">
       <div class="image">
-      <img src="assets/images/img1.jpg" alt="img" />
+      <img src="{{ professional.imageUrl }}" alt="img" />
     </div>
     <div class="details">
       <div class="name">
-        <h3>Sarah Jonson</h3>
-        <p>Hair Styling & Colorist</p>
+        <h3>{{ professional.name }}</h3>
+        <p>{{ professional.sector }}</p>
       </div>
 
       <div class="rating">
         <i class="pi pi-star-fill"></i>
-        <p>4.9</p>
+        <p>{{ professional.rating }}</p>
         <label class="availability">
           <span></span>
-          <span>Available</span>
+          <span> {{ professional.isAvailable ? 'Available' : 'Not Available' }}</span>
         </label>
       </div>
     </div>

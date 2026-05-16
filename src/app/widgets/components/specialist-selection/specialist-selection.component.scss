@@ -15,7 +15,8 @@ $color-arrow: #9ca3af; // gray arrow
   margin-bottom: 0.625rem;  
 
   .heading {
-    line-height: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.5rem;
 
     h2 {
       color: $color-text-dark;
@@ -44,6 +45,7 @@ $color-arrow: #9ca3af; // gray arrow
     .professional {
       display: flex;
       align-items: center;
+      padding: 0.25rem 0;
 
       .image {
         width: 4rem;           
@@ -61,7 +63,7 @@ $color-arrow: #9ca3af; // gray arrow
 
       .details {
         .name {
-          line-height: 0.25rem; 
+          line-height: 1rem; 
           h3 {
             color: $color-text-dark;
             font-size: 1.125rem;   
@@ -78,7 +80,7 @@ $color-arrow: #9ca3af; // gray arrow
           display: flex;
           align-items: center;
           gap: 0.25rem;
-          margin-top: -0.625rem; 
+          margin-top: 0.6rem; 
 
           p {
             font-weight: 500;
