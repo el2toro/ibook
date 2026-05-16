@@ -20,7 +20,8 @@ $color-border-light: #cccfD3;     // rgb(204, 207, 211)
   padding: 0 1.5rem;
 
   .heading {
-    line-height: 1.1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
 
     h2 {
       color: $color-text-dark;
@@ -33,10 +34,18 @@ $color-border-light: #cccfD3;     // rgb(204, 207, 211)
       font-size: 1.1rem;
     }
   }
-
-  .time-container {
-    .morning-slots {
+.time-container {
+  display: grid;
+  gap: 2rem;
+  .time-content{
+  
+    .time-name{
+       margin-bottom: 0.5rem;
+    }
+     
+    .slots {
       display: grid;
+      gap: 2rem;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 20px;
       row-gap: 20px;
@@ -62,4 +71,9 @@ $color-border-light: #cccfD3;     // rgb(204, 207, 211)
       }
     }
   }
+  }
 }
+
+.highlight {
+        border: 2px solid $color-primary !important; 
+      }

@@ -6,34 +6,40 @@
 
 <div class="time-container">
 
-  <h3>Morning</h3>
-  <div class="morning-slots">
+ <div class="time-content">
+   <h3 class="time-name">Morning</h3>
+  <div class="slots">
    @for (morningTime of morningTimes; track $index) {
-    <div class="time-slot" (click)="selectTime(morningTime)">
+    <div #timeSlot class="time-slot" (click)="selectTime(morningTime, timeSlot)">
       <span>{{ morningTime }}</span>
       <span>AM</span>
     </div>
    }
   </div>
+ </div>
 
-  <h3>Afternoon</h3>
-  <div class="morning-slots">
+  <div class="time-content">
+     <h3 class="time-name">Afternoon</h3>
+  <div class="slots">
    @for (afternoonTime of afternoonTimes; track $index) {
-    <div class="time-slot" (click)="selectTime(afternoonTime)">
+    <div #timeSlot class="time-slot" (click)="selectTime(afternoonTime, timeSlot)">
        <span>{{ afternoonTime }}</span>
       <span>PM</span>
     </div>
    }
   </div>
+  </div>
 
-  <h3>Evning</h3>
-  <div class="morning-slots">
+  <div class="time-content">
+      <h3 class="time-name">Evening</h3>
+  <div class="slots">
    @for (eveningTime of eveningTimes; track $index) {
-    <div class="time-slot" (click)="selectTime(eveningTime)">
+    <div #timeSlot class="time-slot" (click)="selectTime(eveningTime, timeSlot)">
        <span>{{ eveningTime }}</span>
       <span>PM</span>
     </div>
    }
+  </div>
   </div>
 </div>
 </div>
